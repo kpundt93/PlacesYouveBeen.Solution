@@ -47,5 +47,20 @@ namespace PlacesYouveBeen.Tests
       List<Place> result = Place.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+
+    public void GetAll_ReturnsPlaces_PlaceList()
+    {
+      string cityName1 = "Hawaii";
+      string cityName2 = "Austin";
+      Place newPlace1 = new Place(cityName1);
+      Place newPlace2 = new Place(cityName2);
+      List<Place> newList = new List<Place> {newPlace1, newPlace2};
+
+      List<Place> result = Place.GetAll();
+
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
