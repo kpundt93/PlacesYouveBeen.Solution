@@ -10,8 +10,8 @@ namespace PlacesYouveBeen.Controllers
     [HttpGet("/places")]
     public ActionResult Index()
     {
-      List<Places> allPlaces = Place.GetAll();
-      return View(allItems);
+      List<Place> allPlaces = Place.GetAll();
+      return View(allPlaces);
     }
 
     [HttpGet("/places/new")]
@@ -25,6 +25,13 @@ namespace PlacesYouveBeen.Controllers
     {
       Place myPlace = new Place(cityName);
       return RedirectToAction("Index");
+    }
+
+    [HttpPost("/places/delete")]
+    public ActionResult DeleteAll()
+    {
+      Place.ClearAll();
+      return View();
     }
 
     [HttpGet("/places/{id}")]
