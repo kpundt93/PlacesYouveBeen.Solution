@@ -1,4 +1,4 @@
-/*using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using PlacesYouveBeen.Models;
 using System.Collections.Generic;
 
@@ -33,7 +33,5 @@ namespace PlacesYouveBeen.Controllers
       Place foundPlace = Place.Find(id);
       return View(foundPlace);
     }
-
-    
   }
-}*/
+}
