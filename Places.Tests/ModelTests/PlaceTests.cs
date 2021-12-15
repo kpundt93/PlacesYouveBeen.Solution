@@ -62,5 +62,25 @@ namespace PlacesYouveBeen.Tests
 
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void GetId_PlacesInstantiateWithAnIdAndGetterReturns_Int()
+    {
+      string cityName = "Portland, OR";
+      Place newPlace = new Place(cityName);
+      int result = newPlace.Id;
+      Assert.AreEqual(1, result);
+    }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectPlace_Place()
+    {
+      string cityName1 = "Hawaii";
+      string cityName2 = "Austin";
+      Place newPlace1 = new Place(cityName1);
+      Place newPlace2 = new Place(cityName2);
+      Place result = Place.Find(2);
+      Assert.AreEqual(newPlace2, result);
+    }
   }
 }
